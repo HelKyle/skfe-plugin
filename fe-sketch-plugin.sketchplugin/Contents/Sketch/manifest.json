@@ -1,0 +1,28 @@
+{
+  "name" : "fe-sketch-plugin",
+  "identifier" : "com.helkyle",
+  "version" : "1.0",
+  "description" : "A simple Sketch plugin for font end development.",
+  "author" : "helkyle",
+  "commands" : [
+    {
+      "script" : "plugin.js",
+      "shortcut": "cmd option p",
+      "handlers": {
+        "run": "togglePanel",
+        "actions": {
+          "SelectionChanged.finish": "onSelectionChanged"
+        }
+      },
+      "name": "open panel",
+      "identifier" : "com.helkyle.togglePanel"
+    }
+  ],
+  "menu": {
+    "isRoot": 1,
+    "items": [{
+      "title": "fe-sketch-plugin",
+      "items": ["com.helkyle.togglePanel"]
+    }]
+  }
+}

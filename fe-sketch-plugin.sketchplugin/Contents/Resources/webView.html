@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>A simple Sketch plugin</title>
+  <link rel="stylesheet" href="assets/css/webView.css">
+  <link rel="stylesheet" href="lib/highlight/tomorrow-custom.css">
+  <script src="lib/highlight/highlight.pack.js"></script>
+</head>
+<body>
+  <div class="preview">
+    <div class="preview__item">
+    </div>
+  </div>
+  <div class="form-wrapper">
+    <div class="form-row">
+      <label for="scss-unit">scss 单位</label>
+      <input type="text" class="scss-unit" value="px2rem" autocomplete="off" autocorrect="off" autocapitalize="none">
+    </div>
+    <div class="form-row">
+      <label for="mini-pixel">最小转化像素</label>
+      <input type="number" class="mini-pixel" value="2" autocomplete="off" autocorrect="off" autocapitalize="none">
+    </div>
+  </div>
+  <div class="code-area">
+    <pre>
+      <code class="code scss" contenteditable>
+      </code>
+    </pre>
+  </div>
+  <script src="assets/js/webView.js"></script>
+</body>
+</html>
