@@ -74,6 +74,24 @@ function open (context) {
   threadDictionary[identifier] = webView;
 }
 
+var onCloseDocument = function (context) {
+  if (isOpen()) {
+    close(context);
+  }
+}
+
+var getFontWeight = function (layer) {
+  let font = layer.fontPostscriptName()
+  let weight = font.split('-')[1]
+  weight = weight && weight.toLowerCase()
+  if (weight && FONT_WEIGHT_MAP[weight]) {
+    return FONT_WEIGHT_MAP[weight]
+  } else {
+    log(weight)
+  }
+  return null
+}
+
 var onSelectionChanged = function(context) {
   var threadDictionary = NSThread.mainThread().threadDictionary();
   
@@ -89,8 +107,11 @@ var onSelectionChanged = function(context) {
       let layer = selection[0];
       var frame = layer.frame();
       var attributes = layer.CSSAttributes();
-
       if (layer.class() == "MSTextLayer") {
+        var fontWeight = getFontWeight(layer)
+        if (fontWeight) {
+          attributes.addObject(`font-weight: ${fontWeight};`);
+        }
         if (!layer.lineHeight()) {
           attributes.addObject(`line-height: 1.4;`);
         }

@@ -11,7 +11,8 @@
       "handlers": {
         "run": "togglePanel",
         "actions": {
-          "SelectionChanged.finish": "onSelectionChanged"
+          "SelectionChanged.finish": "onSelectionChanged",
+          "CloseDocument": "onCloseDocument"
         }
       },
       "name": "open panel",

@@ -1,7 +1,7 @@
 // Disable the context menu
-document.addEventListener("contextmenu", function(e) {
-  e.preventDefault();
-});
+// document.addEventListener("contextmenu", function(e) {
+//   e.preventDefault();
+// });
 
 let codeBlock = document.querySelector(".code");
 let unitInput = document.querySelector('.scss-unit');
@@ -26,18 +26,27 @@ function filterCode (codeString) {
   var unitsFunc = (match, val) => {
     let unit = unitInput.value
     let miniPixel = miniPixelInput.value
+    val = +val
+    val = parseFloat(val.toFixed(2))
     if (val <= parseInt(miniPixel)) {
       return `${val}px`
     }
     return `${unit}(${val})`
   }
-  let result = codeString.replace(/([0-9]+)px/ig, unitsFunc)
+  let result = codeString.replace(/([0-9]+[\.[0-9]+]?)px/ig, unitsFunc)
   result = removeBlackListAttributes(result)
   return result
 }
 
+function preProcess (style) {
+  return style.replace(/linear-gradient\((\-*[0-9]+)deg/g, function () {
+    return 'linear-gradient(' + (360 - parseFloat(RegExp.$1)) % 360 + 'deg'
+  })
+}
+
 function updatePreview(params) {
   let style = params.attributes;
+  style = preProcess(style);
   previewItem.innerHTML = params.content || '';
   let displayCode = `${style.replace(/(;)/g, '$1\n')}`;
   displayCode = `${displayCode.replace(/(\*\/)/g, '$1\n')}`;
