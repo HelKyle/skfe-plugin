@@ -12,6 +12,12 @@ A simple Sketch plugin for font end development.
 
 ![effect](https://ohc0m0ub0.qnssl.com/1aa80a79376eac11209dab42899138181512653717478.gif)
 
+## 如何使用
+- 下载，安装
+- 快捷键 `option` + `command` + `p` 打开插件
+- 点击选中图层
+- 复制 scss 代码
+
 ## ChangeLog
 #### 0.0.4
 - 修复 CSS3 linear-gradient 角度问题
