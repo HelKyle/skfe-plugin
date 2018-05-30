@@ -1,0 +1,35 @@
+{
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "commands": [
+    {
+      "script": "handlers.js",
+      "shortcut": "cmd option p",
+      "handlers": {
+        "run": "togglePanel",
+        "actions": {
+          "SelectionChanged.finish": "onSelectionChanged"
+        }
+      },
+      "name": "open panel",
+      "identifier": "com.helkyle.togglePanel"
+    }
+  ],
+  "menu": {
+    "isRoot": 1,
+    "items": [
+      {
+        "title": "skfe-plugin",
+        "items": [
+          "com.helkyle.togglePanel"
+        ]
+      }
+    ]
+  },
+  "version": "0.1.0",
+  "name": "skfe-plugin",
+  "disableCocoaScriptPreprocessor": true,
+  "appcast": "https://raw.githubusercontent.com//master/.appcast.xml",
+  "author": "helkyle",
+  "authorEmail": "helkylefighting@gmail.com"
+}

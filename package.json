@@ -1,5 +1,6 @@
 {
   "name": "skfe-plugin",
+  "description": "A plugin for frontend engineer",
   "version": "0.1.0",
   "engines": {
     "sketch": ">=3.0"
@@ -7,7 +8,7 @@
   "skpm": {
     "name": "skfe-plugin",
     "manifest": "src/manifest.json",
-    "main": "plugin.sketchplugin"
+    "main": "skfe.sketchplugin"
   },
   "scripts": {
     "build": "skpm-build",
@@ -40,5 +41,13 @@
       "git add"
     ]
   },
-  "author": "zhouxiaokai <helkylefighting@gmail.com>"
+  "author": "helkyle <helkylefighting@gmail.com>",
+  "dependencies": {
+    "copy-webpack-plugin": "^4.5.1",
+    "sketch-module-web-view": "^1.1.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HelKyle/skfe-plugin.git"
+  }
 }

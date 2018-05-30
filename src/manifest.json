@@ -1,17 +1,23 @@
 {
   "compatibleVersion": 3,
   "bundleVersion": 1,
-  "commands": [
-    {
-      "name": "my-command",
-      "identifier": "my-command-identifier",
-      "script": "./my-command.js"
-    }
-  ],
+  "commands": [{
+    "script": "./handlers.js",
+    "shortcut": "cmd option p",
+    "handlers": {
+      "run": "togglePanel",
+      "actions": {
+        "SelectionChanged.finish": "onSelectionChanged"
+      }
+    },
+    "name": "open panel",
+    "identifier": "com.helkyle.togglePanel"
+  }],
   "menu": {
-    "title": "skfe-plugin",
-    "items": [
-      "my-command-identifier"
-    ]
+    "isRoot": 1,
+    "items": [{
+      "title": "skfe-plugin",
+      "items": ["com.helkyle.togglePanel"]
+    }]
   }
 }
