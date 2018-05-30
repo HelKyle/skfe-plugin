@@ -5,11 +5,10 @@
 ⭐️ SKFE is a Sketch plugin designed to save life of front-end engineer. Still in development stage~
 
 ### HOW TO USE
-- Download the source code
 - Install plugin
 - `Command` + `Alt` + `P`
 - Select the layer
-- Get the Scss code ~:tada::tada::tada:
+- Get the scss code ~:tada::tada::tada:
 
 ### DEMO
 ![demo](./demo.gif)
